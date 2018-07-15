@@ -1,16 +1,7 @@
 <template>
   <!-- <div class="container"> -->
     <div class="zan-panel">
-      <div v-for="item in items" :key="item" class="icon-wrap">
-        <a :href="'/pages/' + item.href + '/main'">
-          <div class="zan-icon" :class="'zan-icon-' + item.icon"  style="color: #ff4343;"></div>
-          <div class="icon-classname">{{item.name}}</div>
-        </a>
-      </div>
-      <div v-for="icon in icons" :key="icon" class="icon-wrap">
-        <div class="zan-icon" :class="'zan-icon-' + icon"  style="color: #ff4343;"></div>
-        <div class="icon-classname">zan-icon-{{ icon }}</div>
-      </div>
+      归属地查询
     </div>
   <!-- </div> -->
 
