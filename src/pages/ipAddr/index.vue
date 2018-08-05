@@ -1,7 +1,8 @@
 <template>
   <!-- <div class="container"> -->
-    <div class="zan-panel">
-      IP地址查询
+    <div class="result">
+      您当前的IP地址为： 
+      <h1>{{currentIP}}</h1>
     </div>
   <!-- </div> -->
 
@@ -9,50 +10,23 @@
 </template>
 
 <script>
+  import get from '../../utils/request';
+  
   export default {
     data() {
       return {
-        items: [
-          {
-            icon: 'logistics',
-            name: '查物流',
-            href: 'logistics',
-          },
-          {
-            icon: 'qr',
-            name: '二维码',
-            href: 'qrCode',
-          },
-          {
-            icon: 'phone',
-            name: '归属地',
-            href: 'qCellCore',
-          },
-          {
-            icon: 'location',
-            name: 'IP地址',
-            href: 'ipAddr',
-          },
-        ],
+        currentIP: '',
       };
+    },
+    async onShow() {
+      const res = await get('tools/get_client_ip');
+      this.currentIP = res;
     },
     methods: {
     },
   };
 </script>
-<style  scoped>
-  .icon-wrap {
-    width: 33.33333%;
-    height: 100px;
-    float: left;
-    text-align: center;
-  }
-  .icon-classname {
-    color: #999;
-    font-size: 10px;
-  }
-  .zan-icon {
-    font-size: 24px;
-    margin: 20px;
-  }
+
+<style>
+  .result { text-align: center }
 </style>
