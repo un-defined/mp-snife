@@ -23,6 +23,7 @@
     },
     async onShow() {
       const res = await get(URL.GET_CLIENT_IP);
+      console.log(this.$rq);
       const {
         country, region, city, county, ip, isp,
       } = res;
