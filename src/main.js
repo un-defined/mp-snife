@@ -1,15 +1,17 @@
-import { Fly } from 'flyio/dist/npm/wx';
+// import * as Fly from 'flyio/dist/npm/wx';
 import Vue from 'vue';
 import App from './App';
+
+const Fly = require('flyio/dist/npm/wx');
 
 const fly = new Fly();
 
 // 添加拦截器
-fly.interceptors.request.use((config, promise) => {
-  // 给所有请求添加自定义header
-  config.headers['X-Tag'] = 'flyio';
-  return config;
-});
+// fly.interceptors.request.use((config, promise) => {
+//   // 给所有请求添加自定义header
+//   config.headers['X-Tag'] = 'flyio';
+//   return config;
+// });
 // 配置请求基地址
 // fly.config.baseURL="https://wendux.github.io/"
 

@@ -22,11 +22,10 @@
       };
     },
     async onShow() {
-      const res = await get(URL.GET_CLIENT_IP);
-      console.log(this.$rq);
+      const { data, status } = await this.$rq.get(URL.GET_CLIENT_IP);
       const {
         country, region, city, county, ip, isp,
-      } = res;
+      } = data.data;
       this.currentIP = ip;
       this.ipDetail = `${country} - ${region} - ${city} - ${county} - ${isp}`;
     },
